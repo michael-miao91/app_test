@@ -78,6 +78,17 @@ set :bundle_flags, ''
 # Default value for keep_releases is 5
 # set :keep_releases, 5
 
+#部署时输出的日志等级为debug
+# set :log_level, :info
+
+set :unicorn_pid, -> { File.join(current_path, "tmp", "pids", "unicorn.pid") }
+set :unicorn_config_path, -> { File.join(current_path, "config", "unicorn", "#{fetch(:rails_env)}.rb") }
+set :unicorn_roles, -> { :app }
+set :unicorn_options, -> { "" }
+set :unicorn_rack_env, -> { fetch(:rails_env) == "development" ? "development" : "deployment" }
+set :unicorn_restart_sleep_time, 3
+set :unicorn_config_path, -> { File.join(current_path, "config", "unicorn.rb") }
+
 namespace :deploy do
 
   after :restart, :clear_cache do
@@ -87,6 +98,9 @@ namespace :deploy do
       #   execute :rake, 'cache:clear'
       # end
     end
+  end
+  task :restart do
+    invoke 'unicorn:restart'
   end
 
 end

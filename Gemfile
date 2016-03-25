@@ -31,6 +31,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+gem 'unicorn', '~> 4.9.0'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -40,6 +41,7 @@ group :development, :test do
   # gem 'capistrano-rbenv', '~> 2.0.3'
   gem 'capistrano-bundler', '~> 1.1.4'
   gem 'capistrano-rails', '~> 1.1.3'
+  gem 'capistrano3-unicorn', '~> 0.2.1'
 end
 
 group :development do
