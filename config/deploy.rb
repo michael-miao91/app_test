@@ -42,6 +42,7 @@ set :bundle_flags, ''
 set(:config_files, %w(
   nginx.conf
   database.yml
+  application.yml
   log_rotation
   monit
   unicorn.rb
