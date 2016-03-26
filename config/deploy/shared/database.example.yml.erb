@@ -1,8 +1,9 @@
 <%= fetch(:rails_env) %>:
   adapter: mysql2
+  timeout: 5000
   encoding: utf8
   pool: 5
-  database: app_test_<%= fetch(:rails_env) %>
-  username: <%= ENV["SECRET_KEY_BASE"] %>
-  password: <%= ENV["SECRET_KEY_BASE"] %>
+  database: <%= "#{fetch(:application)}_#{fetch(:rails_env)}" %>
+  username: <%= ENV["APP_TEST_DATABASE_USER"] %>
+  password: <%= ENV['APP_TEST_DATABASE_PASSWORD'] %>
   
