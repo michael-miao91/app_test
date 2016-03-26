@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :tks
   resources :tasks
   root 'users#index'
   resources :users

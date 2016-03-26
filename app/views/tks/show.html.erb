@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @tk.title %>
+</p>
+
+<p>
+  <strong>Content:</strong>
+  <%= @tk.content %>
+</p>
+
+<%= link_to 'Edit', edit_tk_path(@tk) %> |
+<%= link_to 'Back', tks_path %>
