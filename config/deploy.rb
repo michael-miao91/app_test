@@ -25,7 +25,7 @@ set :rvm_type, :user
 set :keep_releases, 5
 
 # files we want symlinking to specific entries in shared
-set :linked_files, %w{config/database.yml config/application.yml}
+set :linked_files, %w{config/database.yml}
 
 # dirs we want symlinking to shared
 set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
@@ -42,7 +42,6 @@ set :bundle_flags, ''
 set(:config_files, %w(
   nginx.conf
   database.yml
-  application.yml
   log_rotation
   monit
   unicorn.rb
