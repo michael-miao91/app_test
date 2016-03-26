@@ -1,5 +1,5 @@
 class AddClomnToUsers < ActiveRecord::Migration
   def change
-  	add_cloumn :users, :content, :string
+  	add_column :users, :content, :string
   end
 end
